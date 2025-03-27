@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/bin/sh
 
-bunx @biomejs/biome lint --write src
-bunx @biomejs/biome format --write src
+bun test
+bun lint-staged
