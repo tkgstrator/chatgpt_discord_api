@@ -2,6 +2,9 @@
   "name": "chatgpt_discord_api",
   "module": "src/index.ts",
   "type": "module",
+  "version": "0.0.1",
+  "description": "ChatGPT Discord API",
+  "license": "MIT",
   "scripts": {
     "dev": "wrangler dev",
     "lint": "bunx @biomejs/biome lint src",
