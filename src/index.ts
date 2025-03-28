@@ -46,7 +46,7 @@ app.onError(async (error, c) => {
     return c.json({ message: error.message }, error.status)
   }
   if (error instanceof ZodError) {
-    return c.json({ message: JSON.parse(error.message), description: error.cause }, 400)
+    return c.json({ message: JSON.parse(error.message), description: error.name }, 400)
   }
   console.error(error)
   return c.json({ message: error.message }, 500)
