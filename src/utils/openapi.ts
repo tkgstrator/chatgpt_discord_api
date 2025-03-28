@@ -1,10 +1,9 @@
 import info from '@/../package.json'
-import type { ApiReferenceOptions } from '@scalar/hono-api-reference'
 import { lowerCase, startCase, upperFirst } from 'lodash'
 
 export const reference: ApiReferenceOptions = {
   spec: {
-    url: '/specification'
+    url: '/openapi.json'
   },
   defaultHttpClient: {
     targetKey: 'node',
@@ -16,18 +15,21 @@ export const reference: ApiReferenceOptions = {
   metaData: {
     title: startCase(lowerCase(info.name))
   },
-  theme: 'bluePlanet',
+  theme: 'default',
   defaultOpenAllTags: false,
   tagsSorter: 'alpha'
 }
 
 export const specification = {
-  openapi: '3.0.0',
+  openapi: '3.1.0',
   info: {
     title: startCase(lowerCase(info.name)),
+    // @ts-ignore
     version: info.version,
+    // @ts-ignore
     description: info.description,
     license: {
+      // @ts-ignore
       name: info.license
     }
   }
