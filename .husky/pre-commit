@@ -1,2 +1,4 @@
-bunx @biomejs/biome lint --write src
-bunx @biomejs/biome format --write src
+#!/bin/sh
+
+bun test
+bun lint-staged
