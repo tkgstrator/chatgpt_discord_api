@@ -12,11 +12,7 @@ jobs:
         uses: oven-sh/setup-bun@v2
         with:
           bun-version: latest
-<<<<<<< HEAD
-      - name: Check lockfile
-=======
-      - name: Install commitlint
->>>>>>> f9142d0 (ci: check lockfile validation)
+      - name: Check Lockfile
         run: |
           bun install --frozen-lockfile --ignore-scripts
   commitlint:
