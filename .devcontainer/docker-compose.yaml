@@ -1,39 +1,13 @@
 services:
-  chatgpt_discord_api:
+  node:
     build:
       context: .
       dockerfile: Dockerfile
-      args:
-        BUN_VERSION: 1.1.24
     volumes:
-      - node_modules_cached:/home/bun/app/node_modules
-      - ../:/home/bun/app:cached
+      - node_modules:/home/vscode/app/node_modules
+      - ../:/home/vscode/app:cached
     tty: true
     stdin_open: true
-    ports:
-      - 8787:8787
-    networks:
-      - chatgpt_discord
-  # ngrok:
-  #   image: ngrok/ngrok:latest
-  #   command:
-  #     - start
-  #     - --all
-  #     - --config
-  #     - /etc/ngrok.yml
-  #   ports:
-  #     - 4040:4040
-  #   environment:
-  #     - NGROK_AUTHTOKEN=${NGROK_AUTHTOKEN}
-  #   depends_on:
-  #     - chatgpt_discord_api
-  #   volumes:
-  #     - ./ngrok.yml:/etc/ngrok.yml
 
 volumes:
-  node_modules_cached:
-
-
-networks:
-  chatgpt_discord:
-    external: true
+  node_modules:

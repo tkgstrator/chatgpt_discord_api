@@ -8,3 +8,10 @@ send_metrics = true
 kv_namespaces = [
   { binding = "ChatGPT_Thread", id = "3953fc8f715543c49107d62cf6e11df1", preview_id = "fe834d85a6164c0eb815a7dfe0fb19fa" },
 ]
+
+[dev]
+ip = "0.0.0.0"
+port = 8787
+
+[observability.logs]
+enabled = true
